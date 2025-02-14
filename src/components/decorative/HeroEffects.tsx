@@ -1,22 +1,46 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
+
+// 防抖函数
+function debounce<T extends (...args: any[]) => any>(
+  func: T,
+  wait: number
+): (...args: Parameters<T>) => void {
+  let timeout: NodeJS.Timeout
+  return (...args: Parameters<T>) => {
+    clearTimeout(timeout)
+    timeout = setTimeout(() => func(...args), wait)
+  }
+}
 
 export default function HeroEffects() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [mounted, setMounted] = useState(false)
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+  // 使用防抖的鼠标移动处理函数
+  const handleMouseMove = useCallback(
+    debounce((e: MouseEvent) => {
       setMousePosition({
         x: e.clientX,
         y: e.clientY
       })
-    }
+    }, 10),
+    []
+  )
 
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
+  useEffect(() => {
+    setMounted(true)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('mousemove', handleMouseMove)
+      return () => window.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [handleMouseMove])
+
+  if (!mounted) {
+    return null
+  }
 
   return (
     <>
@@ -28,19 +52,19 @@ export default function HeroEffects() {
         }}
       />
       
-      {/* 装饰性粒子 */}
+      {/* 装饰性粒子 - 减少数量并使用相对位置 */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(10)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-1 h-1 bg-squid-pink rounded-full"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: `${Math.random() * 100}%`,
+              y: `${Math.random() * 100}%`,
               opacity: 0
             }}
             animate={{
-              y: [null, -20],
+              y: [null, '-20%'],
               opacity: [0, 0.5, 0],
               scale: [1, 1.5, 1]
             }}
