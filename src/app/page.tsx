@@ -62,34 +62,8 @@ interface Hero {
   title: string
   subtitle: string
   description: string
-  cta?: string // 保持为可选属性，因为我们使用了fallback值
+  cta?: string
   secondary?: string
-}
-
-interface Content {
-  hero: Hero
-  team: Team
-  partners: Partners
-  whyDegenSquid: {
-    title: string
-    subtitle: string
-    points: Point[]
-  }
-  tokenomics: {
-    title: string
-    subtitle: string
-    features: Feature[]
-  }
-  technology: {
-    title: string
-    subtitle: string
-    features: Feature[]
-  }
-  games: {
-    title: string
-    subtitle: string
-    list: Game[]
-  }
 }
 
 export default function Home() {
@@ -427,39 +401,6 @@ export default function Home() {
           </motion.div>
         </div>
       </Section>
-
-      {/* Roadmap Section - Temporarily Hidden
-      <Section id="roadmap-section">
-        <SectionHeading 
-          title={content.roadmap.title}
-        />
-        <div className="max-w-4xl mx-auto">
-          {content.roadmap.phases.map((phase: Phase, index: number) => (
-            <motion.div
-              key={phase.title}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="mb-8 last:mb-0"
-            >
-              <h3 className="text-xl font-semibold mb-4 squid-text">
-                {phase.title}
-              </h3>
-              <div className="cyber-card p-6 rounded-xl">
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {phase.items.map((item: string, i: number) => (
-                    <li key={i} className="flex items-center text-gray-300">
-                      <span className="text-squid-pink mr-2">→</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
-      */}
     </div>
   )
 }
