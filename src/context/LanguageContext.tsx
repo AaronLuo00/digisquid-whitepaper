@@ -23,7 +23,7 @@ interface Team {
   comingSoon: {
     title: string
     description: string
-    positions: string[]
+    positions?: string[]
   }
 }
 
@@ -33,22 +33,16 @@ interface Partner {
   twitter: string
   description: string
   support: string
-  highlights: string[]
-  contributions: string[]
 }
 
 interface Partners {
   title: string
   subtitle: string
-  sectionTitles: {
-    highlights: string
-    support: string
-  }
   list: Partner[]
   comingSoon: {
     title: string
     description: string
-    upcoming: string[]
+    upcoming?: string[]
   }
 }
 
@@ -79,7 +73,7 @@ export interface Phase {
 
 type Content = {
   meta: { title: string; description: string }
-  hero: { title: string; subtitle: string; description: string }
+  hero: { title: string; subtitle: string; description: string; cta: string }
   whyDegenSquid: {
     title: string
     subtitle: string
