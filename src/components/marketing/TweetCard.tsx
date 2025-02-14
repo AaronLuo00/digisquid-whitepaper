@@ -1,6 +1,7 @@
 import { Tweet } from '@/content/marketing/tweets'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/context/LanguageContext'
+import Image from 'next/image'
 
 interface TweetCardProps {
   tweet: Tweet
@@ -32,9 +33,11 @@ export default function TweetCard({ tweet }: TweetCardProps) {
       {/* Author Info */}
       <div className="flex items-center gap-4 mb-6">
         <div className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-br from-squid-pink/20 to-purple-600/20 p-0.5">
-          <img
+          <Image
             src={tweet.author.avatar}
             alt={tweet.author.name}
+            width={48}
+            height={48}
             className="w-full h-full rounded-full object-cover"
           />
         </div>
@@ -52,9 +55,11 @@ export default function TweetCard({ tweet }: TweetCardProps) {
         className="block mb-6 hover:opacity-90 transition-opacity"
       >
         <div className="rounded-xl overflow-hidden bg-gradient-to-br from-squid-pink/20 to-purple-600/20 p-1">
-          <img
+          <Image
             src={tweet.screenshot}
             alt="Tweet screenshot"
+            width={600}
+            height={400}
             className="w-full rounded-lg"
           />
         </div>

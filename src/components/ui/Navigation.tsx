@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 import { useLanguage } from '@/context/LanguageContext'
 import LanguageSwitcher from './LanguageSwitcher'
@@ -117,7 +118,7 @@ export default function Navigation() {
               onClick={(e) => handleNavigation(e, '/')}
               className="flex items-center space-x-2 nav-brand group relative overflow-hidden"
             >
-              <img src="/images/DSG.png" alt="DigitalSquid Logo" className="w-8 h-8" />
+              <Image src="/images/DSG.png" alt="DigitalSquid Logo" width={32} height={32} className="w-8 h-8" />
               <span className="text-2xl">DigitalSquid</span>
             </Link>
           </div>

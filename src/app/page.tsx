@@ -2,8 +2,9 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
-import type { Point, Feature, Game, Phase } from '@/context/LanguageContext'
+import type { Point, Feature, Game } from '@/context/LanguageContext'
 import Section, { SectionHeading } from '@/components/ui/Section'
 import BackgroundEffects from '@/components/decorative/BackgroundEffects'
 import HeroEffects from '@/components/decorative/HeroEffects'
@@ -69,7 +70,26 @@ interface Content {
   hero: Hero
   team: Team
   partners: Partners
-  [key: string]: any
+  whyDegenSquid: {
+    title: string
+    subtitle: string
+    points: Point[]
+  }
+  tokenomics: {
+    title: string
+    subtitle: string
+    features: Feature[]
+  }
+  technology: {
+    title: string
+    subtitle: string
+    features: Feature[]
+  }
+  games: {
+    title: string
+    subtitle: string
+    list: Game[]
+  }
 }
 
 export default function Home() {
@@ -300,9 +320,11 @@ export default function Home() {
             >
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="w-32 h-32 sm:w-48 sm:h-48 relative rounded-xl overflow-hidden">
-                  <img
+                  <Image
                     src={member.photo}
                     alt={member.name}
+                    width={192}
+                    height={192}
                     className="object-cover w-full h-full"
                   />
                 </div>
@@ -357,9 +379,11 @@ export default function Home() {
               {/* Partner Header */}
               <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-6">
                 <div className="w-24 h-24 rounded-xl overflow-hidden bg-gradient-to-br from-squid-pink/20 to-purple-600/20 p-1">
-                  <img
+                  <Image
                     src={partner.avatar}
                     alt={partner.name}
+                    width={96}
+                    height={96}
                     className="w-full h-full object-cover rounded-lg"
                   />
                 </div>
