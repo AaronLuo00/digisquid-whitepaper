@@ -201,7 +201,7 @@ export const content = {
     members: [
       {
         name: "Aaron",
-        role: "首席开发者",
+        role: "核心开发者",
         photo: "/images/team/aaron.PNG",
         description: "资深软件工程师，在区块链和AI开发领域拥有3年丰富经验。哈佛大学博士（正在Gap），致力于创新游戏解决方案。",
         links: {
@@ -231,14 +231,14 @@ export const content = {
         twitter: "https://x.com/holoworldai",
         description: "革命性AI叙事引擎（市值曾达3.4亿美元）。为AI代理提供多模态层，彻底改变游戏叙事体验。",
         support: "为DigitalSquid提供先进的AI叙事能力和角色互动技术支持，以及广泛的KOL和生态支持。"
-      },
-      {
-        name: "Nicholas",
-        avatar: "/images/partners/Nicholas.jpg",
-        twitter: "https://x.com/dapanji_eth",
-        description: "Binance Labs AI合作伙伴，多个成功Web3项目的主要贡献者。哈佛校友，为AI和加密货币创新带来战略视野。",
-        support: "战略顾问，提供行业洞察和大量的成熟项目与业内资源对接"
       }
+      // {
+      //   name: "Nicholas",
+      //   avatar: "/images/partners/Nicholas.jpg",
+      //   twitter: "https://x.com/dapanji_eth",
+      //   description: "Binance Labs AI合作伙伴，多个成功Web3项目的主要贡献者。哈佛校友，为AI和加密货币创新带来战略视野。",
+      //   support: "战略顾问，提供行业洞察和大量的成熟项目与业内资源对接"
+      // }
     ],
     comingSoon: {
       title: "更多合作伙伴即将加入",

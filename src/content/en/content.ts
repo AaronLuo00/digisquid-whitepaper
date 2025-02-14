@@ -201,7 +201,7 @@ export const content = {
     members: [
       {
         name: "Aaron",
-        role: "Lead Developer",
+        role: "Core Developer",
         photo: "/images/team/aaron.PNG",
         description: "Experienced software engineer with a strong background in blockchain and AI development for 3 years. Harvard phd (currently on Gap) with a passion for innovative gaming solutions.",
         links: {
@@ -231,14 +231,14 @@ export const content = {
         twitter: "https://x.com/holoworldai",
         description: "The AI Engine for Storytelling (ATH: $340M). Multimodal layer for AI agents, revolutionizing narrative experiences in gaming.",
         support: "Empowering DigitalSquid with advanced AI storytelling capabilities and character interactions, along with extensive KOL & ecosystem support."
-      },
-      {
-        name: "Nicholas",
-        avatar: "/images/partners/Nicholas.jpg",
-        twitter: "https://x.com/dapanji_eth",
-        description: "AI Partner at BAinance Labs and key contributor to multiple successful Web3 projects. Harvard alumnus bringing strategic vision to AI & Crypto innovation.",
-        support: "Strategic advisor providing industry insights and extensive mature project & industry connections"
       }
+      // {
+      //   name: "Nicholas",
+      //   avatar: "/images/partners/Nicholas.jpg",
+      //   twitter: "https://x.com/dapanji_eth",
+      //   description: "AI Partner at BAinance Labs and key contributor to multiple successful Web3 projects. Harvard alumnus bringing strategic vision to AI & Crypto innovation.",
+      //   support: "Strategic advisor providing industry insights and extensive mature project & industry connections"
+      // }
     ],
     comingSoon: {
       title: "More Partners Coming Soon",
