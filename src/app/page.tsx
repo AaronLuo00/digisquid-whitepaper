@@ -69,7 +69,7 @@ interface Hero {
 export default function Home() {
   const { content, language } = useLanguage()
   const t = {
-    cta: language === 'zh' ? '社区' : '1231344353',
+    cta: language === 'zh' ? '社区' : 'Community',
     learnMore: language === 'zh' ? '了解更多' : 'Learn More'
   }
 
